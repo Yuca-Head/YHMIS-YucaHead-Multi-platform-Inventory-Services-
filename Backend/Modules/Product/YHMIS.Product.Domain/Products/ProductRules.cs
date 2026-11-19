@@ -12,17 +12,22 @@ public partial record class Product
         /// Creates a new product and validates its inital properties.
         /// </summary>
         /// <returns>If parameters are valid: New product. Else: Error</returns>
-        public static Result<Product> Create(int id, string name, string? description, bool isActive = true)
+        public static Result<Product> Create(int id, string name, string sku, string? description, bool isActive = true)
         {
             if(id < 0)
                 return Result<Product>.Failure(new("Product.Invalid.Id", "Id cannot be negative"));
             
             var invalidName = InvalidName(name);
 
-            if(invalidName is not null)
+            if(invalidName.HasValue)
                 return Result<Product>.Failure(invalidName.Value);
+
+            var invalidSKU = SkuRules(sku);
+
+            if(invalidSKU.HasValue)
+                return Result<Product>.Failure(invalidSKU.Value);
             
-            return Result<Product>.Success(new(id, name, description, isActive));
+            return Result<Product>.Success(new(id, name, sku, description, isActive));
         }
 
 
@@ -48,6 +53,18 @@ public partial record class Product
         private static Error? InvalidName(string name)
         => string.IsNullOrWhiteSpace(name) ? new("Product.Invalid.Name", "Name cannot be empty")
         : null;
+
+        private static Error? SkuRules(string sku)
+        {
+
+            if(string.IsNullOrWhiteSpace(sku))  
+                return new Error("Product.Invalid.SKU", "SKU cannot be empty");
+                
+            if(sku.Length != 8)
+                return new Error("Prodcut.Invalid.SkuLength", "SKU length must be 8");
+            
+            return null;
+        }
 
     }
 }

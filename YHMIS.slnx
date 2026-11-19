@@ -1,9 +1,4 @@
 <Solution>
-    <Folder Name="/Backend/Modules/ThirdParty/">
-        <Project Path="Backend/Modules/ThirdParty/YHMIS.ThirdParty.Application/YHMIS.ThirdParty.Application.csproj" />
-        <Project Path="Backend/Modules/ThirdParty/YHMIS.ThirdParty.Domain/YHMIS.ThirdParty.Domain.csproj" />
-        <Project Path="Backend/Modules/ThirdParty/YHMIS.ThirdParty.Infrastructure/YHMIS.ThirdParty.Infrastructure.csproj" />
-    </Folder>
 
     <!--Tests-->
     <Project Path="Tests/UnitTests/UnitTests.csproj" />
@@ -13,6 +8,8 @@
     <Folder Name="/Backend/Modules/">
         <Project Path="Backend/Modules/YHMIS.Shared/YHMIS.Shared.csproj" />
     </Folder>
+
+    <!--Inventory-->
     <Folder Name="/Backend/Modules/Inventory/">
         <Project Path="Backend/Modules/Inventory/YHMIS.Inventory.Application/YHMIS.Inventory.Application.csproj" />
         <Project Path="Backend/Modules/Inventory/YHMIS.Inventory.Domain/YHMIS.Inventory.Domain.csproj" />
@@ -24,6 +21,13 @@
         <Project Path="Backend/Modules/Product/YHMIS.Product.Application/YHMIS.Product.Application.csproj" />
         <Project Path="Backend/Modules/Product/YHMIS.Product.Domain/YHMIS.Product.Domain.csproj" />
         <Project Path="Backend/Modules/Product/YHMIS.Product.Infrastructure/YHMIS.Product.Infrastructure.csproj" />
+    </Folder>
+
+    <!--Thirdparty--> 
+    <Folder Name="/Backend/Modules/Thirdparty/">
+        <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Application/YHMIS.Thirdparty.Application.csproj" />
+        <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Domain/YHMIS.Thirdparty.Domain.csproj" />
+        <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Infrastructure/YHMIS.Thirdparty.Infrastructure.csproj" />
     </Folder>
 
 </Solution>

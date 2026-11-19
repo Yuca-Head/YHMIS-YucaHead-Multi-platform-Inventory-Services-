@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\YHMIS.Shared\YHMIS.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
