@@ -20,12 +20,11 @@ public sealed partial record UnitOfMeasure
                 return Result<UnitOfMeasure>.Failure(
                     new Error("UnitOfMeasure.Invalid.Id", "Id cannot be negative"));
 
-            if (string.IsNullOrWhiteSpace(name))
-                return Result<UnitOfMeasure>.Failure(
-                    new Error("UnitOfMeasure.Invalid.Name", "Name cannot be empty"));
 
-            return Result<UnitOfMeasure>.Success(
-                new UnitOfMeasure(id, name));
+            var nameRule = Error.FromNameRule(name, nameof(UnitOfMeasure));
+
+            return nameRule.HasValue ? Result<UnitOfMeasure>.Failure(nameRule.Value)
+            : Result<UnitOfMeasure>.Success(new UnitOfMeasure(id, name));
         }
         
         /// <summary>
@@ -38,12 +37,10 @@ public sealed partial record UnitOfMeasure
         public static Result<UnitOfMeasure> ChangeName(
             in UnitOfMeasure unitOfMeasure, string newName)
         {
-            if (string.IsNullOrWhiteSpace(newName))
-                return Result<UnitOfMeasure>.Failure(
-                    new Error("UnitOfMeasure.Invalid.Name", "Name cannot be empty"));
+            var nameRule = Error.FromNameRule(newName, nameof(UnitOfMeasure));
 
-            return Result<UnitOfMeasure>.Success(
-                unitOfMeasure with { Name = newName });
+            return nameRule.HasValue ? Result<UnitOfMeasure>.Failure(nameRule.Value) : Result<UnitOfMeasure>.Success(
+            unitOfMeasure with { Name = newName });
         }
     }
 }

@@ -17,7 +17,7 @@ public partial record class Product
             if(id < 0)
                 return Result<Product>.Failure(new("Product.Invalid.Id", "Id cannot be negative"));
             
-            var invalidName = InvalidName(name);
+            var invalidName = Error.FromNameRule(name, nameof(Product));
 
             if(invalidName.HasValue)
                 return Result<Product>.Failure(invalidName.Value);
@@ -37,8 +37,8 @@ public partial record class Product
         /// <returns>If newName is valid returns the same product with new name. Else: Error.</returns>
         public static Result<Product> ChangeName(in Product product, string newName)
         {
-            var invalidName = InvalidName(newName);
-            if(invalidName is not null)
+            var invalidName = Error.FromNameRule(newName, nameof(Product));
+            if(invalidName.HasValue)
                 return Result<Product>.Failure(invalidName.Value);
             
             return Result<Product>.Success(product with {Name = newName});
@@ -49,10 +49,6 @@ public partial record class Product
 
         public static Product ChangeState(in Product product, bool isActive)
         => product with {IsActive = isActive};
-
-        private static Error? InvalidName(string name)
-        => string.IsNullOrWhiteSpace(name) ? new("Product.Invalid.Name", "Name cannot be empty")
-        : null;
 
         private static Error? SkuRules(string sku)
         {

@@ -19,7 +19,7 @@ public sealed partial record Brand
                 return Result<Brand>.Failure(
                     new Error("Brand.Invalid.Id", "Id cannot be negative"));
 
-            var nameRule = BrandNameRules(name);
+            var nameRule = Error.FromNameRule(name, nameof(Brand));
 
             if (nameRule.HasValue)
                 return Result<Brand>.Failure(nameRule.Value);
@@ -36,7 +36,7 @@ public sealed partial record Brand
         /// </returns>
         public static Result<Brand> ChangeName(in Brand brand, string newName)
         {
-            var nameRule = BrandNameRules(newName);
+            var nameRule = Error.FromNameRule(newName, nameof(Brand));
 
             if (nameRule.HasValue)
                 return Result<Brand>.Failure(nameRule.Value);
@@ -45,7 +45,5 @@ public sealed partial record Brand
                 brand with { Name = newName });
         }
 
-        private static Error? BrandNameRules(string name)
-        => string.IsNullOrWhiteSpace(name) ? new("Brand.Invalid.Name", "Name cannot be empty") : null; 
     }
 }

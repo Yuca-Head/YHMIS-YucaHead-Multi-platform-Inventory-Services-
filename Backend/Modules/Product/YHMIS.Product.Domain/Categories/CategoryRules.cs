@@ -19,7 +19,7 @@ public sealed partial record Category
                 return Result<Category>.Failure(
                     new Error("Category.Invalid.Id", "Id cannot be negative"));
 
-            var nameRule = NameRule(name);
+            var nameRule = Error.FromNameRule(name, nameof(Category));
 
             if (nameRule.HasValue)
                 return Result<Category>.Failure(nameRule.Value);
@@ -35,7 +35,7 @@ public sealed partial record Category
         /// De lo contrario, devuelve un error.
         public static Result<Category> ChangeName(in Category category, string newName)
         {
-            var nameRule = NameRule(newName);
+            var nameRule = Error.FromNameRule(newName, nameof(Category));
 
             if (nameRule.HasValue)
                 return Result<Category>.Failure(nameRule.Value);
@@ -43,9 +43,5 @@ public sealed partial record Category
             return Result<Category>.Success(
                 category with { Name = newName });
         }
-
-        private static Error? NameRule(string name)
-        => string.IsNullOrWhiteSpace(name) ? new("Category.Invalid.Name", "Name cannot be empty") :
-        null;
     }
 }
