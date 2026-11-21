@@ -3,7 +3,7 @@ using YHMIS.Shared.Results;
 
 namespace YHMIS.Product.Domain.UnitsOfMeasure;
 
-public sealed partial record class UnitOfMeasure
+public sealed partial record UnitOfMeasure
 {
     public static class UnitOfMeasureRules
     {
@@ -28,7 +28,7 @@ public sealed partial record class UnitOfMeasure
                 new UnitOfMeasure(id, name));
         }
         
-         /// <summary>
+        /// <summary>
         /// Cambia el nombre de una unidad de medida.
         /// </summary>
         /// <returns>

@@ -2,7 +2,7 @@ using YHMIS.Shared.Results;
 
 namespace YHMIS.Product.Domain.Categories;
 
-public sealed partial record class Category
+public sealed partial record Category
 {
     public static class CategoryRules
     {
@@ -19,14 +19,15 @@ public sealed partial record class Category
                 return Result<Category>.Failure(
                     new Error("Category.Invalid.Id", "Id cannot be negative"));
 
-            if (string.IsNullOrWhiteSpace(name))
-                return Result<Category>.Failure(
-                    new Error("Category.Invalid.Name", "Name cannot be empty"));
+            var nameRule = NameRule(name);
+
+            if (nameRule.HasValue)
+                return Result<Category>.Failure(nameRule.Value);
 
             return Result<Category>.Success(new Category(id, name));
         }
 
-         /// <summary>
+        /// <summary>
         /// Cambia el nombre de una categoría.
         /// </summary>
         /// <returns>
@@ -34,12 +35,17 @@ public sealed partial record class Category
         /// De lo contrario, devuelve un error.
         public static Result<Category> ChangeName(in Category category, string newName)
         {
-            if (string.IsNullOrWhiteSpace(newName))
-                return Result<Category>.Failure(
-                    new Error("Category.Invalid.Name", "Name cannot be empty"));
+            var nameRule = NameRule(newName);
+
+            if (nameRule.HasValue)
+                return Result<Category>.Failure(nameRule.Value);
 
             return Result<Category>.Success(
                 category with { Name = newName });
         }
+
+        private static Error? NameRule(string name)
+        => string.IsNullOrWhiteSpace(name) ? new("Category.Invalid.Name", "Name cannot be empty") :
+        null;
     }
 }

@@ -2,11 +2,11 @@ using YHMIS.Shared.Results;
 
 namespace YHMIS.Product.Domain.Brands;
 
-public sealed partial record class Brand
+public sealed partial record Brand
 {
     public static class BrandRules
     {
-         /// <summary>
+        /// <summary>
         /// Crea una nueva marca y valida sus propiedades iniciales.
         /// </summary>
         /// <returns>
@@ -19,14 +19,15 @@ public sealed partial record class Brand
                 return Result<Brand>.Failure(
                     new Error("Brand.Invalid.Id", "Id cannot be negative"));
 
-            if (string.IsNullOrWhiteSpace(name))
-                return Result<Brand>.Failure(
-                    new Error("Brand.Invalid.Name", "Name cannot be empty"));
+            var nameRule = BrandNameRules(name);
+
+            if (nameRule.HasValue)
+                return Result<Brand>.Failure(nameRule.Value);
 
             return Result<Brand>.Success(new Brand(id, name));
         }
 
-         /// <summary>
+        /// <summary>
         /// Cambia el nombre de una marca.
         /// </summary>
         /// <returns>
@@ -35,12 +36,16 @@ public sealed partial record class Brand
         /// </returns>
         public static Result<Brand> ChangeName(in Brand brand, string newName)
         {
-            if (string.IsNullOrWhiteSpace(newName))
-                return Result<Brand>.Failure(
-                    new Error("Brand.Invalid.Name", "Name cannot be empty"));
+            var nameRule = BrandNameRules(newName);
+
+            if (nameRule.HasValue)
+                return Result<Brand>.Failure(nameRule.Value);
 
             return Result<Brand>.Success(
                 brand with { Name = newName });
         }
+
+        private static Error? BrandNameRules(string name)
+        => string.IsNullOrWhiteSpace(name) ? new("Brand.Invalid.Name", "Name cannot be empty") : null; 
     }
 }

@@ -1,6 +1,6 @@
 namespace YHMIS.Product.Domain.Brands;
 
-public sealed partial record class Brand
+public sealed partial record Brand
 {
     private Brand(int id, string name)
     {

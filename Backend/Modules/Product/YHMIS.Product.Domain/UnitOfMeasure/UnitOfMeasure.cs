@@ -2,7 +2,7 @@ using YHMIS.Shared.Results;
 
 namespace YHMIS.Product.Domain.UnitsOfMeasure;
 
-public sealed partial record class UnitOfMeasure
+public sealed partial record UnitOfMeasure
 {
     private UnitOfMeasure(int id, string name)
     {

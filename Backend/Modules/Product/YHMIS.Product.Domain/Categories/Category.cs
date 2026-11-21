@@ -2,7 +2,7 @@ using YHMIS.Shared.Results;
 
 namespace YHMIS.Product.Domain.Categories;
 
-public sealed partial record class Category
+public sealed partial record Category
 {
     private Category(int id, string name)
     {
