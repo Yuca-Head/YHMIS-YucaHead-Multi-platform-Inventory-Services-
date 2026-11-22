@@ -5,7 +5,7 @@ namespace YHMIS.Product.Domain.UnitsOfMeasure;
 
 public sealed partial record UnitOfMeasure
 {
-    public static class UnitOfMeasureRules
+    public static class Operations
     {
         /// <summary>
         /// Crea una nueva unidad de medida y valida sus propiedades iniciales.
