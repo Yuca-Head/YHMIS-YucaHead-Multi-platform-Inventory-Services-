@@ -25,5 +25,5 @@ public record class Result<T>
     /// <param name="error">Error that raises failure.</param>
     /// <returns>Result with an error.</returns>
     public static Result<T> Failure(Error error)
-    => new() {Error = error, IsSuccess = false}; 
+    => new() {Error = error, IsSuccess = false};
 }
