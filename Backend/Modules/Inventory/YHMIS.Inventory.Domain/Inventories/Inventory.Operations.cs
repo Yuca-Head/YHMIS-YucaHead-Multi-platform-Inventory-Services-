@@ -4,7 +4,7 @@ namespace YHMIS.Inventory.Domain.Inventories;
 
 public sealed partial record class Inventory
 {
-    public static class InventoryRules
+    public static class Operations
     {
         public static Result<Inventory> Create(int productId, decimal stock, decimal minStock, decimal maxStock, decimal cost)
         {

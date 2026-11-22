@@ -1,6 +1,6 @@
 namespace YHMIS.Inventory.Domain.Inventories;
 
-public sealed partial record class Inventory
+public sealed partial record Inventory
 {
     private Inventory(int productId, decimal stock, decimal minStock, decimal maxStock, decimal cost)
     {
@@ -9,9 +9,7 @@ public sealed partial record class Inventory
         MinStock = minStock;
         MaxStock = maxStock;
         Cost = cost;
-
     }
-    private Inventory() {}
 
     public int ProductId {get; private init;} = -1;
     public decimal Stock {get; private init;}
