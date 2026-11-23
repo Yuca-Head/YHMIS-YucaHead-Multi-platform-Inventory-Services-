@@ -1,11 +1,14 @@
+using YHMIS.Shared.Abstractions;
+
 namespace YHMIS.Thirdparty.Domain.Roles.SupplierRole;
 
-public sealed partial record SupplierRole
+public sealed partial record SupplierRole : IEntity<string>
 {
     private SupplierRole(ThirdpartyRole role, string? ruc)
     {
         Role = role;
         RUC = ruc;
+        Key = Role.Key;
     }
 
     /*
@@ -20,4 +23,8 @@ public sealed partial record SupplierRole
     internal const int RucLenth = 14;
     public ThirdpartyRole Role {get; private init;}
     public string? RUC {get; private init;}
+    /// <summary>
+    /// Role-Code.
+    /// </summary>
+    public string Key {get;}
 }

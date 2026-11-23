@@ -1,18 +1,19 @@
+using YHMIS.Shared.Abstractions;
 using YHMIS.Shared.Results;
 
 namespace YHMIS.Product.Domain.Categories;
 
-public sealed partial record Category
+public sealed partial record Category : IEntity<int>
 {
     private Category(int id, string name)
     {
-        Id = id;
+        Key = id;
         Name = name;
     }
 
     private Category() { }
 
-    public int Id { get; private init; } = -1;
+    public int Key { get; private init; } = -1;
 
     public string Name
     {

@@ -1,8 +1,9 @@
+using YHMIS.Shared.Abstractions;
 using YHMIS.Shared.Results;
 
 namespace YHMIS.Thirdparty.Domain.Roles;
 
-public sealed partial record ThirdpartyRole
+public sealed partial record ThirdpartyRole : IEntity<string>
 {
     internal const int MinCodeLenth = 4;
 
@@ -11,7 +12,7 @@ public sealed partial record ThirdpartyRole
     private ThirdpartyRole(int thirdPartyId, string code)
     {
         Id = thirdPartyId;
-        Code = code;
+        Key = code;
     }
 
     /// <summary>
@@ -19,7 +20,10 @@ public sealed partial record ThirdpartyRole
     /// </summary>
     public int Id {get; private init;}
 
-    public string Code {get; private init => field = value.Trim();}
+    /// <summary>
+    /// Third-party Code.
+    /// </summary>
+    public string Key {get; private init => field = value.Trim();}
 
     public bool IsActive {get; private init;}
 }
