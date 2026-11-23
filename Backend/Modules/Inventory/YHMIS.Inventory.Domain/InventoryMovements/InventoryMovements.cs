@@ -1,13 +1,14 @@
 using YHMIS.Inventory.Domain.Enums;
+using YHMIS.Shared.Abstractions;
 
 namespace YHMIS.Inventory.Domain.InventoryMovements;
 
-public sealed partial record InventoryMovement
+public sealed partial record InventoryMovement : IEntity<int>
 {
     private InventoryMovement(int id, int transactionCode, 
     DateTimeOffset date, SourceTransaction source, int quantity, decimal productCost)
     {
-        Id = id;
+        Key = id;
         TransactionCode = transactionCode;
         SourceTransaction = source;
         Quantity = quantity;
@@ -15,7 +16,7 @@ public sealed partial record InventoryMovement
         Date = date;
     }
     
-    public int Id{get; private init;} = -1;
+    public int Key{get; private init;} = -1;
     public int TransactionCode { get; private init;}
     public SourceTransaction SourceTransaction {get; private init;}
     public TransactionStatus Status {get; private init;}

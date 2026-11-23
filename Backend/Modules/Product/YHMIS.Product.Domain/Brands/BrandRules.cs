@@ -15,10 +15,6 @@ public sealed partial record Brand
         /// </returns>
         public static Result<Brand> Create(int id, string name)
         {
-            if (id < 0)
-                return Result<Brand>.Failure(
-                    new Error("Brand.Invalid.Id", "Id cannot be negative"));
-
             var nameRule = Error.FromNameRule(name, nameof(Brand));
 
             if (nameRule.HasValue)
