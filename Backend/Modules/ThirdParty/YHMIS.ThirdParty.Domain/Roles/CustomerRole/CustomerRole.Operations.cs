@@ -1,6 +1,6 @@
 using YHMIS.Shared.Results;
 
-namespace YHMIS.Thirdparty.Domain.Roles;
+namespace YHMIS.Thirdparty.Domain.Roles.CustomerRole;
 
 public sealed partial record CustomerRole
 {
