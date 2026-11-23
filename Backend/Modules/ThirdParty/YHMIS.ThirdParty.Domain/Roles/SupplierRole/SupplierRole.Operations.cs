@@ -1,6 +1,6 @@
 using YHMIS.Shared.Results;
 
-namespace YHMIS.Thirdparty.Domain.Roles;
+namespace YHMIS.Thirdparty.Domain.Roles.SupplierRole;
 
 public sealed partial record SupplierRole
 {
