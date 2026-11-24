@@ -1,6 +1,0 @@
-{
-    "mssql.intelliSense.enableErrorChecking": false,
-    "mssql.intelliSense.enableIntelliSense": false,
-    "mssql.intelliSense.enableQuickInfo": false,
-    "mssql.intelliSense.enableSuggestions": false
-}
