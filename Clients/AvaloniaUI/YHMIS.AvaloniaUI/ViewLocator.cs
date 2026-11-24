@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using YHMIS.AvaloniaUI.ViewModels;
@@ -19,9 +20,25 @@ public class ViewLocator : IDataTemplate
         if (param is null)
             return null;
 
-        var name = param.GetType().FullName!.Replace("ViewModel", "View", StringComparison.Ordinal);
-        var type = Type.GetType(name);
 
+
+        var name = string.Empty;
+
+        if (OperatingSystem.IsAndroid())
+        {
+            System.Console.WriteLine("We're on Android");
+            name = param.GetType().FullName!.Replace("YHMIS.AvaloniaUI","YHMIS.AvaloniaUI.Android", StringComparison.Ordinal)
+            .Replace("ViewModel", "View", StringComparison.Ordinal);
+        }
+        else if (OperatingSystem.IsWindows())
+        {
+            System.Console.WriteLine("We're on Windows");
+            name = param.GetType().FullName!.Replace("ViewModel", "View", StringComparison.Ordinal);
+        }
+        var type = Type.GetType(name);
+        
+        System.Console.WriteLine(name);
+        
         if (type != null)
         {
             return (Control)Activator.CreateInstance(type)!;

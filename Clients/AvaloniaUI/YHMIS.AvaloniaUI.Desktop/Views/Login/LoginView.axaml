@@ -1,0 +1,10 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="YHMIS.AvaloniaUI.Desktop.Views.Login.LoginView"
+    xmlns:vm="using:YHMIS.AvaloniaUI.ViewModels.Login"
+    x:DataType="vm:LoginViewModel">
+
+    <Grid Background="Red">
+        <TextBlock Text="Stuck In PC" FontSize="50" VerticalAlignment="Center" Foreground="White"/>
+    </Grid>
+</UserControl>

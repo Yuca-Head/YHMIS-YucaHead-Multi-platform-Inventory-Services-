@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace YHMIS.AvaloniaUI.Views;
+namespace YHMIS.AvaloniaUI.Desktop.Views;
 
 public partial class MainWindow : Window
 {
