@@ -1,8 +1,9 @@
+using YHMIS.Shared.Abstractions;
 using YHMIS.Shared.Results;
 
 namespace YHMIS.Thirdparty.Domain.Thirdparties;
 
-public partial record class ThirdParty
+public partial record class ThirdParty 
 {
     public static class Operations
     {

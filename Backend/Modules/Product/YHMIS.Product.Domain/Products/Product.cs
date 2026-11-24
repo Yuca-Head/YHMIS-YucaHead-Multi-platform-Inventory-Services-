@@ -1,16 +1,17 @@
 using YHMIS.Product.Domain.Brands;
 using YHMIS.Product.Domain.Categories;
 using YHMIS.Product.Domain.UnitsOfMeasure;
+using YHMIS.Shared.Abstractions;
 
 namespace YHMIS.Product.Domain.Products;
 
-public partial record class Product
+public partial record class Product : IEntity<int>
 {
     public const int SkuLength = 8;
     private Product(int id, string name, string sku, UnitOfMeasure unitOfMeasure, Category category,
     Brand brand, string? description, bool isActive = true)
     {
-        Id = id;
+        Key = id;
         Name = name;
         SKU = sku;
         UnitOfMeasure = unitOfMeasure;
@@ -20,7 +21,7 @@ public partial record class Product
         IsActive = isActive;
     }
 
-    public int Id {get; private init;} = -1;
+    public int Key {get; private init;} = -1;
 
     /// <summary>
     /// Can change Creation out of this class for creation purposes.

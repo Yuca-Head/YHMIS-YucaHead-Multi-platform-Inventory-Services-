@@ -27,8 +27,8 @@ public readonly partial record struct Contact
                 return Result<Contact>.Failure(new("Contact.Invalid.Telphone.Length",
                 "Telephone number lenght must be eight without format"));
 
-            return Result<Contact>.Success(new(id, ownerId, number, Enums.ContactType.TelephoneNumber){
-                GetFormat = $"{number[..4]}-{number[^4..]}"});      
+            return Result<Contact>.Success(new(id, ownerId, number, Enums.ContactType.TelephoneNumber,
+            $"{number[..4]}-{number[^4..]}"));      
         }
     }
 }

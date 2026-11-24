@@ -1,12 +1,12 @@
-using YHMIS.Thirdparty.Domain.Roles;
+using YHMIS.Shared.Abstractions;
 
 namespace YHMIS.Thirdparty.Domain.Thirdparties;
 
-public sealed partial record ThirdParty
+public sealed partial record ThirdParty : IEntity<int>
 {
     private ThirdParty(int id, string name, string? ruc)
     {
-        Id = id;
+        Key = id;
         Name = name;
     }
 
@@ -21,7 +21,7 @@ public sealed partial record ThirdParty
     */
     internal const int RucLenth = 14;
 
-    public int Id {get; private init;}
+    public int Key {get; private init;}
     public string Name {get; private init;}
 
     public string? RUC {get; private init;}

@@ -1,0 +1,10 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="YHMIS.AvaloniaUI.Android.Views.Login.LoginView"
+    xmlns:vm="using:YHMIS.AvaloniaUI.ViewModels.Login"
+    x:DataType="vm:LoginViewModel">
+
+    <Grid Background="#00FFCC">
+        <TextBlock Text="Blooming On Android" FontSize="50" VerticalAlignment="Center" Foreground="Black"/>
+    </Grid>
+</UserControl>
