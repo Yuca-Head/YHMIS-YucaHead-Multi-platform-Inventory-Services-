@@ -6,6 +6,7 @@ namespace YHMIS.Product.Domain.Products;
 
 public partial record class Product
 {
+    public const int SkuLength = 8;
     private Product(int id, string name, string sku, UnitOfMeasure unitOfMeasure, Category category,
     Brand brand, string? description, bool isActive = true)
     {

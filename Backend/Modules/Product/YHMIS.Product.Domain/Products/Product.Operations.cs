@@ -65,7 +65,7 @@ public partial record class Product
             if(string.IsNullOrWhiteSpace(sku))  
                 return new Error("Product.Invalid.SKU", "SKU cannot be empty");
                 
-            if(sku.Length != 8)
+            if(sku.Length != SkuLength)
                 return new Error("Prodcut.Invalid.SkuLength", "SKU length must be 8");
             
             return null;
