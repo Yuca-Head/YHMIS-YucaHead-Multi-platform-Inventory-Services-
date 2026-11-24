@@ -28,6 +28,22 @@
         <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Application/YHMIS.Thirdparty.Application.csproj" />
         <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Domain/YHMIS.Thirdparty.Domain.csproj" />
         <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Infrastructure/YHMIS.Thirdparty.Infrastructure.csproj" />
+    </Folder>   
+
+    <!--Avalonia Client-->
+    <Folder Name="/Clients/AvaloniaUI/">
+        
+        <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI.Android/YHMIS.AvaloniaUI.Android.csproj">
+            <Deploy />
+        </Project>
+        <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI.Browser/YHMIS.AvaloniaUI.Browser.csproj" />
+        <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI.Desktop/YHMIS.AvaloniaUI.Desktop.csproj" />
+        <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI.iOS/YHMIS.AvaloniaUI.iOS.csproj">
+            <Deploy />
+        </Project>
+        <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI/YHMIS.AvaloniaUI.csproj" />
+        
     </Folder>
+
 
 </Solution>
