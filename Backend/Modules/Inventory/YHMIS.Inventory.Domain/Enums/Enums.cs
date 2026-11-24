@@ -1,6 +1,6 @@
 namespace YHMIS.Inventory.Domain.Enums;
 
-public enum SourceTransaction
+public enum TransactionSource
 {
     Purchase = 1,
     Sale = 2,

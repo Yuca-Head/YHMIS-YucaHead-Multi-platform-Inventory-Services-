@@ -11,7 +11,7 @@ public sealed partial record class InventoryMovement
 {
     public static class Operations
     {
-        public static Result<InventoryMovement> Create(int id, int transactionCode, DateTimeOffset date, SourceTransaction source,
+        public static Result<InventoryMovement> Create(int id, int transactionCode, DateTimeOffset date, TransactionSource source,
         int quantity, decimal productCost, TransactionStatus? status = null)
         {
             if (id < 0)
