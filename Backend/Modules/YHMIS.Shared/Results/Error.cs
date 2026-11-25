@@ -1,6 +1,6 @@
 namespace YHMIS.Shared.Results;
 
-public readonly record struct Error(string Code, string Message)
+public readonly record struct Error(string Code, string Message, Exception? Exception = null)
 {
     public static Error? FromNameRule(string name, string className)
     => string.IsNullOrWhiteSpace(name) ? null :
@@ -27,5 +27,17 @@ public readonly record struct Error(string Code, string Message)
             Message : $"Code lenght must be in the range: {minLenght}-{maxLenght}");
         
         return null;
+    }
+
+    public static Error? FromOperation(Action action, string code)
+    {
+        try
+        {
+            action();
+            return null;
+        }catch (Exception e)
+        {
+            return new Error(code, e.Message, e);
+        }
     }
 }

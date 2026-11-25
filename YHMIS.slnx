@@ -8,6 +8,11 @@
     <Folder Name="/Backend/Modules/">
         <Project Path="Backend/Modules/YHMIS.Shared/YHMIS.Shared.csproj" />
     </Folder>
+    <Folder Name="/Backend/Modules/Identity/">
+        <Project Path="Backend/Modules/Identity/YHMIS.Identity.Application/YHMIS.Identity.Application.csproj" />
+        <Project Path="Backend/Modules/Identity/YHMIS.Identity.Domain/YHMIS.Identity.Domain.csproj" />
+        <Project Path="Backend/Modules/Identity/YHMIS.Identity.Infrastrucutre/YHMIS.Identity.Infrastrucutre.csproj" />
+    </Folder>
 
     <!--Inventory-->
     <Folder Name="/Backend/Modules/Inventory/">
@@ -28,7 +33,8 @@
         <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Application/YHMIS.Thirdparty.Application.csproj" />
         <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Domain/YHMIS.Thirdparty.Domain.csproj" />
         <Project Path="Backend/Modules/Thirdparty/YHMIS.Thirdparty.Infrastructure/YHMIS.Thirdparty.Infrastructure.csproj" />
-    </Folder>   
+    </Folder>
+    <Folder Name="/Clients/" />   
 
     <!--Avalonia Client-->
     <Folder Name="/Clients/AvaloniaUI/">
