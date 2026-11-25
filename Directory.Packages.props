@@ -29,6 +29,9 @@
         <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
         <PackageVersion Include="Npgsql" Version="11.0.0"/>
 
+        <!--API-->
+        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.13" />
+
     </ItemGroup>
 
 

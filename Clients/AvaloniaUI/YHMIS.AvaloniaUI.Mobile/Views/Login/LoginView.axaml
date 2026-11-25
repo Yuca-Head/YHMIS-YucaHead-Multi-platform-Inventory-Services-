@@ -1,9 +1,9 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="YHMIS.AvaloniaUI.Android.Views.Login.LoginView"
-             xmlns:vm="using:YHMIS.AvaloniaUI.ViewModels.Login"
-             x:DataType="vm:LoginViewModel"
-             BackGround = "White">
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            x:Class="YHMIS.AvaloniaUI.Mobile.Views.Login.LoginView"
+            xmlns:vm="using:YHMIS.AvaloniaUI.ViewModels.Login"
+            x:DataType="vm:LoginViewModel"
+            Background = "White">
 
     <UserControl.Styles>
         <Style Selector="TextBox.LoginInput">
@@ -44,5 +44,10 @@
             <Setter Property="Background" Value="#1F6F6B" />
         </Style>
     </UserControl.Styles>
-</UserControl.Styles>
+
+    <Grid Background="GreenYellow">
+
+    </Grid>
+
+
 </UserControl>

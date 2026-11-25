@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\YHMIS.AvaloniaUI\YHMIS.AvaloniaUI.csproj" />
+    <ProjectReference Include="..\YHMIS.AvaloniaUI.Mobile\YHMIS.AvaloniaUI.Mobile.csproj" />
   </ItemGroup>
+
 </Project>

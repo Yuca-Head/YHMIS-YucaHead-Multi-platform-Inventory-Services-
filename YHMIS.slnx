@@ -5,6 +5,9 @@
 
     <!--Backend-->
     <Folder Name="/Backend/" />
+    <Folder Name="/Backend/API/">
+        <Project Path="Backend/API/YHMIS.API/YHMIS.API.csproj" />
+    </Folder>
     <Folder Name="/Backend/Modules/">
         <Project Path="Backend/Modules/YHMIS.Shared/YHMIS.Shared.csproj" />
     </Folder>
@@ -38,7 +41,6 @@
 
     <!--Avalonia Client-->
     <Folder Name="/Clients/AvaloniaUI/">
-        
         <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI.Android/YHMIS.AvaloniaUI.Android.csproj">
             <Deploy />
         </Project>
@@ -47,6 +49,8 @@
         <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI.iOS/YHMIS.AvaloniaUI.iOS.csproj">
             <Deploy />
         </Project>
+        <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI.Mobile/YHMIS.AvaloniaUI.Mobile.csproj" />
+        
         <Project Path="Clients/AvaloniaUI/YHMIS.AvaloniaUI/YHMIS.AvaloniaUI.csproj" />
         
     </Folder>

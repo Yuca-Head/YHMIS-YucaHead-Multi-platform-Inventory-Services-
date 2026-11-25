@@ -5,7 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using YHMIS.AvaloniaUI.ViewModels;
 
-namespace YHMIS.AvaloniaUI.Android;
+namespace YHMIS.AvaloniaUI.Mobile;
 
 /// <summary>
 /// Given a view model, returns the corresponding view if possible.
@@ -25,13 +25,12 @@ public class ViewLocator : IDataTemplate
         var name = string.Empty;
 
 
-        name = param.GetType().FullName!.Replace("YHMIS.AvaloniaUI","YHMIS.AvaloniaUI.Android", StringComparison.Ordinal)
+        name = param.GetType().FullName!.Replace("YHMIS.AvaloniaUI","YHMIS.AvaloniaUI.Mobile", StringComparison.Ordinal)
         .Replace("ViewModel", "View", StringComparison.Ordinal);
         
 
         var type = Type.GetType(name);
         
-        System.Console.WriteLine(name);
         
         if (type != null)
         {

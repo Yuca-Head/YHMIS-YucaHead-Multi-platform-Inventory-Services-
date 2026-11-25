@@ -1,8 +1,6 @@
-
-using Avalonia;
 using Avalonia.Controls;
 
-namespace YHMIS.AvaloniaUI.Android.Views;
+namespace YHMIS.AvaloniaUI.Mobile.Views;
 
 public partial class MainView : UserControl
 {

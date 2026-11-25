@@ -1,8 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using YHMIS.AvaloniaUI.Mobile.Views;
 using YHMIS.AvaloniaUI.ViewModels;
-using YHMIS.AvaloniaUI.Android.Views;
+
 
 namespace YHMIS.AvaloniaUI.Android;
 

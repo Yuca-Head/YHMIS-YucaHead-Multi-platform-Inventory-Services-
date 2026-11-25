@@ -4,7 +4,7 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:vm="using:YHMIS.AvaloniaUI.ViewModels"
             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-            x:Class="YHMIS.AvaloniaUI.Android.Views.MainView"
+            x:Class="YHMIS.AvaloniaUI.Mobile.Views.MainView"
             x:DataType="vm:MainViewModel">
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -12,10 +12,13 @@
         <vm:MainViewModel />
     </Design.DataContext>
     
+    <UserControl Content="{Binding Login}"/>
+    <!--
     <Grid RowDefinitions="*,*">
         <TextBox Text="{Binding Greeting}"  FontSize="50"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center" />
         <UserControl Content="{Binding Login}" Grid.Row="1" />
     </Grid>
+    -->
 </UserControl>
