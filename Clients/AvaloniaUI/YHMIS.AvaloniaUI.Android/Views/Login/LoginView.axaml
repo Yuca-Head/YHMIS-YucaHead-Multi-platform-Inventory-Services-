@@ -1,10 +1,48 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    x:Class="YHMIS.AvaloniaUI.Android.Views.Login.LoginView"
-    xmlns:vm="using:YHMIS.AvaloniaUI.ViewModels.Login"
-    x:DataType="vm:LoginViewModel">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="YHMIS.AvaloniaUI.Android.Views.Login.LoginView"
+             xmlns:vm="using:YHMIS.AvaloniaUI.ViewModels.Login"
+             x:DataType="vm:LoginViewModel"
+             BackGround = "White">
 
-    <Grid Background="#00FFCC">
-        <TextBlock Text="Blooming On Android" FontSize="50" VerticalAlignment="Center" Foreground="Black"/>
-    </Grid>
+    <UserControl.Styles>
+        <Style Selector="TextBox.LoginInput">
+            <Setter Property="Height" Value="54" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="BorderBrush" Value="#B9C4CA" />
+            <Setter Property="BorderThickness" Value="1.5" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Foreground" Value="#66767F" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="14,0" />
+        </Style>
+
+        <Style Selector="TextBox.LoginInput:focus /template/ Border#PART_BorderElement">
+            <Setter Property="BorderBrush" Value="#3FA39C" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+
+        <Style Selector="Button.PrimaryButton">
+            <Setter Property="Height" Value="54" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Background" Value="#1F6F6B" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+
+        <Style Selector="Button.PrimaryButton:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#3FA39C" />
+        </Style>
+
+        <Style Selector="Button.PrimaryButton:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="#1F6F6B" />
+        </Style>
+    </UserControl.Styles>
+</UserControl.Styles>
 </UserControl>
