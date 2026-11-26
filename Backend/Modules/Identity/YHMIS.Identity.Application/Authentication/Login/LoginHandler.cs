@@ -1,21 +1,22 @@
 using Microsoft.AspNetCore.Identity;
 using OneOf;
 using OneOf.Types;
+using YHMIS.Identity.Application.Authentication.Commands;
 using YHMIS.Identity.Application.Authentication.Results;
 
 namespace YHMIS.Identity.Application.Authentication.Login;
 
-public sealed class LoginHandler(
-    UserManager<User> userManager)
+public sealed class LoginHandler(UserManager<User> userManager)
 {
-    public async Task<OneOf<Success<User>, 
+    public async Task<OneOf<Success<LoginResult>, 
     Unauthorized, 
     Shared.Results.Error>> 
-    Handle(LoginCommand request,
+    Handle(AuthCommand request,
     CancellationToken cancellationToken)
     {
         var user = await userManager.FindByEmailAsync(
             request.Email);
+            
 
         if (user is null || !user.IsActive)
             return new Unauthorized();
@@ -26,6 +27,8 @@ public sealed class LoginHandler(
         if (!valid)
             return new Unauthorized();
 
-        return new Success<User>(user);
+        var roles = await userManager.GetRolesAsync(user);
+
+        return new Success<LoginResult>(new(user.Id, user.Email, user.UserName, [.. roles]));
     }
 }
