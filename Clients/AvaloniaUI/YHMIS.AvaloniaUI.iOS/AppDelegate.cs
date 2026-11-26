@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.iOS;
 using Avalonia.Media;
+using YHMIS.AvaloniaUI.Mobile;
 
 namespace YHMIS.AvaloniaUI.iOS;
 

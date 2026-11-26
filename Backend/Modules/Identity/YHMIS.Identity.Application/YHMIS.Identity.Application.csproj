@@ -8,7 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\YHMIS.Shared\YHMIS.Shared.csproj" />
-    <ProjectReference Include="..\YHMIS.Identity.Domain\YHMIS.Identity.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="OneOf" />
   </ItemGroup>
 
 </Project>

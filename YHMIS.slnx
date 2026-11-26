@@ -13,8 +13,7 @@
     </Folder>
     <Folder Name="/Backend/Modules/Identity/">
         <Project Path="Backend/Modules/Identity/YHMIS.Identity.Application/YHMIS.Identity.Application.csproj" />
-        <Project Path="Backend/Modules/Identity/YHMIS.Identity.Domain/YHMIS.Identity.Domain.csproj" />
-        <Project Path="Backend/Modules/Identity/YHMIS.Identity.Infrastrucutre/YHMIS.Identity.Infrastrucutre.csproj" />
+        <Project Path="Backend/Modules/Identity/YHMIS.Identity.Infrastructure/YHMIS.Identity.Infrastructure.csproj" />
     </Folder>
 
     <!--Inventory-->
