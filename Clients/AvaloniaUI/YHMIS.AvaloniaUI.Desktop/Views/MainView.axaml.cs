@@ -1,13 +1,16 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using YHMIS.AvaloniaUI.Abstractions;
 
 namespace YHMIS.AvaloniaUI.Desktop.Views;
 
-public partial class MainView : UserControl
+public partial class MainView : UserControl, IMainView
 {
     public MainView()
     {
         InitializeComponent();
     }
+
+    public UserControl Self => this;
 }

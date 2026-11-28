@@ -65,9 +65,9 @@
             </StackPanel>
 
             <TextBlock Text="Frase"
-                       FontSize="10"
-                      Foreground="#52636D"
-                      Margin="0,2,0,0"/>
+                    FontSize="10"
+                    Foreground="#52636D"
+                    Margin="0,2,0,0"/>
                     
                 <StackPanel Margin="0,20,0,0"
                             Spacing="10">
@@ -78,7 +78,7 @@
                                     Foreground="#52636D"/>
 
                         <TextBox Classes="LoginInput"
-                                Watermark="Ingrese su correo"/>
+                                PlaceholderText="Ingrese su correo"/>
                     </StackPanel>
                     <StackPanel Spacing="5">
                         <TextBlock Text="Contraseña"
@@ -86,7 +86,7 @@
                                     Foreground="#52636D"/>
                                     
                         <TextBox Classes="LoginInput"
-                                Watermark="Ingrese su contraseña"/>
+                                PlaceholderText="Ingrese su contraseña"/>
                         </StackPanel>
                             <Button Classes="PrimaryButton"
                                     Content="Entrar"

@@ -17,16 +17,13 @@ public class ViewLocator : IDataTemplate
 {
     public Control? Build(object? param)
     {
+        System.Console.WriteLine("Runned");
         if (param is null)
             return null;
 
 
 
-        var name = string.Empty;
-
-
-
-        name = param.GetType().FullName!.Replace("YHMIS.AvaloniaUI", "YHMIS.AvaloniaUI.Desktop")
+        var name = param.GetType().FullName!.Replace("YHMIS.AvaloniaUI", "YHMIS.AvaloniaUI.Desktop")
         .Replace("ViewModel", "View", StringComparison.Ordinal);
         
         var type = Type.GetType(name);

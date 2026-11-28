@@ -1,12 +1,10 @@
 <Application xmlns="https://github.com/avaloniaui"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:mobile="using:YHMIS.AvaloniaUI.Mobile"
-            x:Class="YHMIS.AvaloniaUI.Android.App"
+            x:Class="YHMIS.AvaloniaUI.App"
             RequestedThemeVariant="Default">
             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
-        <mobile:ViewLocator />
     </Application.DataTemplates>
 
     <Application.Styles>
