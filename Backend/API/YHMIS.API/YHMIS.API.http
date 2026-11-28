@@ -1,0 +1,6 @@
+@YHMIS.API_HostAddress = http://localhost:5248
+
+GET {{YHMIS.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
